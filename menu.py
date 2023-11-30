@@ -35,7 +35,7 @@ def about_us(commission):
             case "4": return False
 
 def save(commission):
-    commission.save(commission.current_cars, path="NTDD/Python/komis/files/after_current.txt")
-    commission.save(commission.sold_cars, path="NTDD/Python/komis/files/after_sold.txt")
-    commission.save(commission.bought_cars, path="NTDD/Python/komis/files/after_bought.txt")
+    commission.save(commission.current_cars, path="_Commission/files/after_current.txt")
+    commission.save(commission.sold_cars, path="_Commission/files/after_sold.txt")
+    commission.save(commission.bought_cars, path="_Commission/files/after_bought.txt")
     print("Saved")

@@ -1,8 +1,6 @@
-from cars import Commission, CarList
+from cars import Commission
 import menu
 
-
-# create commission
 commission = Commission()
 commission.load_data()
 

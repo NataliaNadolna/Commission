@@ -21,16 +21,14 @@ class Commission:
         self.bought_cars = CarList()
 
     def load_data(self):
-        self._read_data(self.current_cars, path="NTDD/Python/komis/files/current.txt")
-        self._read_data(self.sold_cars, path="NTDD/Python/komis/files/sold.txt")
-        self._read_data(self.bought_cars, path="NTDD/Python/komis/files/bought.txt")
+        self.read_data(self.current_cars, path="_Commission/files/current.txt")
+        self.read_data(self.sold_cars, path="_Commission/files/sold.txt")
+        self.read_data(self.bought_cars, path="_Commission/files/bought.txt")
 
-    def _read_data(self, car_list: CarList, path: str):
+    def read_data(self, car_list: CarList, path: str):
         with open(path) as file:
             list = file.read().splitlines() 
 
-        #print("---Wczytuję---")
-        #print(list)
         for index in range(0, len(list), 6): 
             make = list[index]
             model = list[index+1]
@@ -41,8 +39,6 @@ class Commission:
 
             new_car = Car(make, model, capacity, year, mileage, gearbox)
             car_list.append(new_car)
-
-        #print("---Wczytano---")
         file.close
 
     def show_cars(self, car_list):
